@@ -1,5 +1,12 @@
-<h1>Welcome to RetFlix!</h1>
-<p>See our collection of movies below</p>
+<h1>Welcome to RetFlix</h1>
+<p>See our collection of movies below. You can search by title, keyword, or year.<br/><br/><%= link_to 'Add a new movie', new_movie_path %></p>
+
+<%= form_tag movies_path, method: 'GET' do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<br />
 
 <table>
   <tr>
@@ -8,14 +15,14 @@
     <th>Year Released</th>
   </tr>
  
-<% @movies.each do |movie| %>
-  <tr>
-    <td><%= movie.title %></td>
-    <td><%= movie.description %></td>
-    <td><%= movie.year_released %></td>
-  </tr>
-<% end %>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.description %></td>
+      <td class="year"><%= movie.year_released %></td>
+      <td><%= button_to 'Show', movie, :class => "button", :method => :get %></td>
+      <td><%= button_to 'Edit', edit_movie_path(movie), :class => "button", :method => :get %></td>
+      <td><%= button_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
 </table>
- 
-<br>
- 
