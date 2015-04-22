@@ -1,0 +1,37 @@
+<% if @recipe.errors.any? %>
+  <h2>There were errors saving your recipe</h2>
+  <ul>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @recipe do |f| %>
+  <fieldset>
+    <div class='fields'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class='fields'>
+      <%= f.label :type %>
+      <%= f.select :type, [['Appetizer','appetizer'],['Entree','entree'],['Dessert','dessert'],['Drink','drink']] %>
+    </div>
+    <div class='fields'>
+      <%= f.label :desc %>
+      <%= f.text_field :desc %>
+    </div>
+    <div class='fields'>
+      <%= f.label :photo_url %>
+      <%= f.text_field :photo_url %>
+    </div>
+    <div class='fields'>
+      <%= f.label :site_url %>
+      <%= f.text_field :site_url %>
+    </div>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
+
+<br/>

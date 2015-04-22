@@ -1,0 +1,15 @@
+<h1>What would you like to eat/drink?</h1>
+
+<h3><%= link_to "+ Add New Recipe", new_recipe_path %></h3>
+
+<br/><hr/>
+
+<% @recipes.each do |recipe| %>
+  <section>
+    <h3><%= link_to recipe.title, recipe %></h3>
+    <p><b>Type</b>: <%= recipe.type %></p>
+    <p><b>Description</b>: <%= recipe.desc %></p>
+
+    <hr>
+  </section>
+<% end %>
