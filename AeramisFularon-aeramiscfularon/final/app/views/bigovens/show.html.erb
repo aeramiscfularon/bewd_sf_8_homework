@@ -1,0 +1,12 @@
+<div class="middle">
+  <div class="inner">
+
+    <h1 class="recipe"><%= @title %></h1>
+
+    <h2><%= @cuisine %> | <%= @category %></h2>
+    <div class="button"><%= link_to "Try it out", raw(@site_url), :target => '_blank' %></div>
+
+    <center><%= link_to "Or try again", random_bigoven_path %></center>
+
+  </div>
+</div>

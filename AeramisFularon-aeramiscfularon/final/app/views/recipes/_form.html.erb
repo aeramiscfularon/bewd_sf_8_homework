@@ -8,30 +8,31 @@
 <% end %>
 
 
-<%= form_for @recipe do |f| %>
-  <fieldset>
-    <div class='fields'>
+<div class="half">
+
+  <%= form_for @recipe do |f| %>
+    <div class="field">
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
-    <div class='fields'>
+    <div class="field">
       <%= f.label :type %>
       <%= f.select :type, [['Appetizer','appetizer'],['Entree','entree'],['Dessert','dessert'],['Drink','drink']] %>
     </div>
-    <div class='fields'>
-      <%= f.label :desc %>
+    <div class="field">
+      <%= f.label 'Description' %>
       <%= f.text_field :desc %>
     </div>
-    <div class='fields'>
+    <div class="field">
       <%= f.label :photo_url %>
       <%= f.text_field :photo_url %>
     </div>
-    <div class='fields'>
+    <div class="field">
       <%= f.label :site_url %>
       <%= f.text_field :site_url %>
     </div>
-  </fieldset>
-  <%= f.submit %>
-<% end %>
+    <br/>
+    <%= f.submit %>
+  <% end %>
 
-<br/>
+</div>

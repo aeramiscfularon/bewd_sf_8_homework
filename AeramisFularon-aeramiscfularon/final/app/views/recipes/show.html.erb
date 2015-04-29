@@ -1,5 +1,21 @@
 <h1><%= @recipe.title %></h1>
-<%= image_tag @recipe.photo_url %>
-<p><%= @recipe.type %></p>
-<p><%= @recipe.desc %></p>
-<p><%= link_to "Edit Recipe", edit_recipe_path(@recipe) %></p>
+
+<div class="recipe">
+
+  <%= image_tag @recipe.photo_url, :style => "background-image: url(recipe.photo_url)" %>
+  <p>
+    <h3>Type</h3>
+    <%= @recipe.type %>
+  </p>
+  <p>
+    <h3>Description</h3>
+    <%= @recipe.desc %>
+  </p>
+  <p><%= link_to "Try it", @recipe.site_url, :target => "_blank" %></p>
+  <p><%= link_to "Edit Recipe", edit_recipe_path(@recipe) %></p>
+
+</div>
+
+<div class="random">
+  <%= link_to "Try Again?", random_recipe_path %>
+</div>

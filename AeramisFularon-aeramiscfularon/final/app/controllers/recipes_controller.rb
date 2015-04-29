@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-  	@recipes = Recipe.all
+    @recipes = Recipe.all
   end
 
   def show
@@ -33,6 +33,12 @@ class RecipesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  
+  def random
+    @recipe = Recipe.offset(rand(Recipe.count)).first
+    render :show
   end
 
   private

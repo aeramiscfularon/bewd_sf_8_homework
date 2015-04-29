@@ -1,15 +1,15 @@
-<h1>What would you like to eat/drink?</h1>
+<div class="middle">
+  <div class="inner">
 
-<h3><%= link_to "+ Add New Recipe", new_recipe_path %></h3>
+    <h1>What would you like to eat?</h1>
 
-<br/><hr/>
+    <div class="random">
+      <%= link_to "I'm Feeling Hungry", random_recipe_path %>
+    </div>
 
-<% @recipes.each do |recipe| %>
-  <section>
-    <h3><%= link_to recipe.title, recipe %></h3>
-    <p><b>Type</b>: <%= recipe.type %></p>
-    <p><b>Description</b>: <%= recipe.desc %></p>
+    <% if user_signed_in? %>
+      <center><%= link_to "+ Add New Recipe", new_recipe_path %></center>
+    <% end %>
 
-    <hr>
-  </section>
-<% end %>
+  </div>
+</div>

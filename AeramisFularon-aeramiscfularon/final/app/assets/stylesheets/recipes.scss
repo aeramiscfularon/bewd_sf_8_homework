@@ -1,3 +1,205 @@
-// Place all the styles related to the Recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Yellowtail|Lato:300,400,700,300italic,400italic|Damion);
+
+body {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.25), 
+      rgba(0, 0, 0, 0.25)
+    ), 
+    url('bg02.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font: 300 16px 'Lato', sans-serif;
+  line-height: 24px;
+  color: #fff;
+}
+
+a {
+ font: 300 16px 'Lato', sans-serif;
+ color: #D9A796;
+ transition: all .5s ease-in-out;
+}
+
+a:hover {
+ color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font: 96px 'Damion', cursive;
+  color: #2C5773;
+  text-shadow: 1px 1px #fff;
+  margin: 35px 0 35px;
+  line-height: 96px;
+}
+
+h1.recipe {
+  text-transform: capitalize;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.top {
+  width: 100%;
+  height: 50px;
+  overflow: auto;
+  clear: both;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+    z-index:-9999px;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 960px;
+}
+
+/*
+.recipe {
+  width: 960px;
+  margin: 0 auto 50px;
+  padding: 50px;
+  background: rgba(255,255,255,.75);
+  overflow: auto;
+  color: #666;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  img {
+    float: left;
+    margin-right: 25px;
+  }
+}
+*/
+
+.half {
+  width: 50%;
+  margin: auto;
+}
+
+.nav {
+  float: left;
+  margin: 17px 0 0 50px;
+  text-transform: uppercase;
+}
+
+.login {
+  float: right;
+  margin: 17px 50px 0 0;
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.devise-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.field {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+  i, em {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: none;
+  }
+}
+
+input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  padding: 5px 0;
+  width: 100%;
+  color: #fff;
+  font: 300 16px 'Lato', sans-serif;
+
+  :focus {
+    background-color: transparent;
+  }
+}
+
+input[type="checkbox"] {
+  width: 20px;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  background-color: #FFA593;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #FFA593;
+  padding: 8px 12px;
+  width: 100%;
+  transition: all .5s ease-in-out;
+}
+
+a.navbar-link {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  margin-left: 5px;
+  transition: all .5s ease-in-out;
+}
+
+a:hover.navbar-link, a:focus.navbar-link {
+  color: #fff;
+  background-color: #2C5773;
+  border-color: #2C5773;
+}
+
+.button {
+  margin: 45px 0 25px;
+  padding: 30px 40px;
+  text-align: center;
+  clear: both;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    background-color: #FFA593;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #FFA593;
+    padding: 30px 40px;
+    transition: all .5s ease-in-out;
+  }
+  a:hover, a:focus {
+    color: #fff;
+    background-color: #FED6C5;
+    border-color: #FED6C5;
+  }
+}
